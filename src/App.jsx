@@ -67,6 +67,8 @@ const styles = `
 
   :root {
   color-scheme: dark only;
+  color: #ffffff;
+  background: #0A0A0A;
     --crimson: #c7251a;
     --crimson-dim: #8f1a12;
     --black: #0A0A0A;
@@ -82,7 +84,7 @@ const styles = `
 
   body {
     background: var(--black);
-    color: var(--white);
+    color: var(--white) !important;
     font-family: 'Syne', sans-serif;
     overflow-x: hidden;
     cursor: none;
