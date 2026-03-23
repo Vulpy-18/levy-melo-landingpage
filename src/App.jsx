@@ -86,6 +86,8 @@ const styles = `
     font-family: 'Syne', sans-serif;
     overflow-x: hidden;
     cursor: none;
+    forced-color-adjust: none;
+    -webkit-text-size-adjust: 100%;
   }
 
   a, button, [role="button"] { cursor: none !important; }
