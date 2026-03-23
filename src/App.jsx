@@ -72,7 +72,7 @@ const styles = `
     --black-mid: #111111;
     --black-card: #141414;
     --black-border: #1E1E1E;
-    --white: #F0ECE8;
+    --white: #ffffff;
     --muted: #5A5A5A;
     --pad: clamp(1.2rem, 5vw, 4rem);
   }
@@ -159,7 +159,7 @@ const styles = `
   .mobile-menu.open { display: flex; }
   .mobile-menu a {
     font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem;
-    letter-spacing: 0.1em; color: #F0ECE8; text-decoration: none;
+    letter-spacing: 0.1em; color: #ffffff; text-decoration: none;
     transition: color 0.2s;
   }
   .mobile-menu a:hover { color: #c7251a; }
@@ -235,7 +235,7 @@ const styles = `
   .btn-primary:hover { background: #8f1a12; transform: translateY(-2px); }
 
   .btn-outline {
-    background: transparent; color: #F0ECE8;
+    background: transparent; color: #ffffff;
     padding: 0.85rem 2rem; border: 1px solid #1E1E1E;
     font-family: 'DM Mono', monospace; font-size: 0.7rem;
     letter-spacing: 0.2em; text-transform: uppercase;
