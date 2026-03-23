@@ -92,6 +92,8 @@ const styles = `
     -webkit-text-size-adjust: 100%;
   }
 
+  h1, h2, h3, div, span, p, a, li, button { color: inherit; }
+
   a, button, [role="button"] { cursor: none !important; }
 
   ::-webkit-scrollbar { width: 3px; }
