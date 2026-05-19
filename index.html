@@ -47,7 +47,9 @@
       body.custom-cursor-active a,
       body.custom-cursor-active button,
       body.custom-cursor-active [role="button"], 
-      body.custom-cursor-active .portfolio-card {
+      body.custom-cursor-active .portfolio-card, 
+      body.custom-cursor-active tag, 
+      body.custom-cursor-active [class*="tag"] {
         cursor: none !important;
       }
 
@@ -73,8 +75,8 @@
       /* ── CURSOR ── */
       .cursor-dot {
         position: fixed;
-        width: 8px;
-        height: 8px;
+        width: 13px;
+        height: 13px;
         background: var(--crimson);
         border-radius: 50%;
         pointer-events: none;
@@ -87,7 +89,7 @@
         position: fixed;
         width: 36px;
         height: 36px;
-        border: 1px solid rgba(199, 37, 26, 0.5);
+        border: 2px solid rgba(199, 37, 26, 0.5);
         border-radius: 50%;
         pointer-events: none;
         z-index: 99998;
@@ -95,6 +97,7 @@
           width 0.2s,
           height 0.2s,
           border-color 0.2s;
+        mix-blend-mode: difference;  
         transform: translate(-50%, -50%);
       }
 
@@ -619,7 +622,7 @@
         right: 1.2rem;
         font-family: "Bebas Neue", sans-serif;
         font-size: 2.5rem;
-        color: rgba(199, 37, 26, 0.07);
+        color: #8f1a1296;
         line-height: 1;
         pointer-events: none;
       }
@@ -1681,7 +1684,7 @@
         </div>
 
       </div>
-      <p class="portfolio-note fade-in">
+      <p class="portfolio-note fade-in" style="font-size: 12px;">
         Quer ver cases completos? →
         <a href="https://www.instagram.com/levyomelo" target="_blank"
           >@levyomelo no Instagram</a
@@ -1764,7 +1767,7 @@
               <span class="skill-dot"></span>Design Gráfico
             </div>
             <div class="skill-item">
-              <span class="skill-dot"></span>Copywriting
+              <span class="skill-dot"></span>Personalização de Plataformas
             </div>
             <div class="skill-item">
               <span class="skill-dot"></span>Páginas de Vendas
@@ -1854,7 +1857,7 @@
           dot.style.top = my + "px";
         });
         document.addEventListener("mouseover", (e) => {
-          if (e.target.closest("a, button, .portfolio-card")) {
+          if (e.target.closest("a, button, .portfolio-card, tag")) {
             ring.style.width = "52px";
             ring.style.height = "52px";
             ring.style.borderColor = "#c7251a";
@@ -1862,7 +1865,7 @@
           }
         });
         document.addEventListener("mouseout", (e) => {
-          if (e.target.closest("a, button, .portfolio-card")) {
+          if (e.target.closest("a, button, .portfolio-card, tag")) {
             ring.style.width = "36px";
             ring.style.height = "36px";
             ring.style.borderColor = "rgba(199,37,26,0.5)";
