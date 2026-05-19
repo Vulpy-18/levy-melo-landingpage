@@ -45,7 +45,8 @@
       body.custom-cursor-active,
       body.custom-cursor-active a,
       body.custom-cursor-active button,
-      body.custom-cursor-active [role="button"] {
+      body.custom-cursor-active [role="button"], 
+      body.custom-cursor-active .portfolio-card {
         cursor: none !important;
       }
 
@@ -716,7 +717,7 @@
       }
       .grid-portfolio {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
         gap: 1px;
         background: var(--black-border);
         border: 1px solid var(--black-border);
@@ -869,7 +870,7 @@
         z-index: 9998;
         background: rgba(0, 0, 0, 0.96);
         flex-direction: column;
-        backdrop-filter: blur(8px);
+        background: rgba(10, 10, 10, 0.95);
         user-select: none;
       }
       .lightbox.open {
@@ -942,7 +943,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: zoom-in;
       }
       .lightbox-body img {
         max-width: 100%;
@@ -1002,9 +1002,18 @@
       }
       .grid-about {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+        grid-template-columns: 1fr; /* No celular: 1 coluna empilhada */
         gap: 2.5rem;
         align-items: start;
+      }
+
+      /* No desktop (telas maiores que 768px): Divide em 2 colunas */
+      @media (min-width: 768px) {
+        .grid-about {
+          /* A imagem pega no máximo 320px de largura, o texto pega todo o resto (1fr) */
+          grid-template-columns: minmax(250px, 320px) 1fr; 
+          gap: 4rem; /* Mais respiro entre a foto e o texto no PC */
+        }
       }
       .about-photo-wrap {
         position: relative;
@@ -1310,7 +1319,7 @@
           <img src="fotos/foto-vulpy-perfil.jpeg" alt="Levy Melo" />
           <div class="hero-card-info">
             <div class="hero-card-name">LEVY MELO</div>
-            <div class="hero-card-sub">Dev · Designer · Estrategista</div>
+            <div class="hero-card-sub">Dev · Designer</div>
           </div>
         </div>
       </div>
@@ -1824,7 +1833,7 @@
           dot.style.top = my + "px";
         });
         document.addEventListener("mouseover", (e) => {
-          if (e.target.closest("a, button")) {
+          if (e.target.closest("a, button, .portfolio-card")) {
             ring.style.width = "52px";
             ring.style.height = "52px";
             ring.style.borderColor = "#c7251a";
@@ -1832,7 +1841,7 @@
           }
         });
         document.addEventListener("mouseout", (e) => {
-          if (e.target.closest("a, button")) {
+          if (e.target.closest("a, button, .portfolio-card")) {
             ring.style.width = "36px";
             ring.style.height = "36px";
             ring.style.borderColor = "rgba(199,37,26,0.5)";
